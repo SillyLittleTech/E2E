@@ -49,8 +49,9 @@ jobs:
 
 For more control and GitHub Pages integration, copy the full workflow file to your repository:
 
-1. **Copy the workflow file** to your repository:
-   ```
+1. **Copy the example workflow file** from this repository to yours:
+   ```bash
+   # Copy .github/workflows/e2e-testing.yml.example to your repository as:
    .github/workflows/e2e-testing.yml
    ```
 
