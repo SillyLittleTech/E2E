@@ -2,8 +2,6 @@
 
 A comprehensive GitHub Action that automatically captures screenshots of your website in multiple modes (web/mobile, light/dark) and performs accessibility testing using Playwright.
 
-[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-E2E%20Testing%20Suite-blue.svg?colorA=24292e&colorB=0366d6&style=flat&longCache=true&logo=github)](https://github.com/marketplace/actions/e2e-testing-suite)
-
 ## 🌟 Features
 
 - **📸 Automatic Screenshot Capture**: Takes screenshots in web and mobile viewports
@@ -380,27 +378,12 @@ Update the commands to match your project:
 - Ensure workflow has required permissions (`pages: write`, `id-token: write`)
 - Check the Pages settings are set to "GitHub Actions" as source
 
-## 🎨 Marketplace
-
-This action is available on the GitHub Marketplace. To publish or update:
-
-1. Create a release with a semantic version tag (e.g., `v1.0.0`)
-2. The action will automatically appear in the GitHub Marketplace
-3. Users can reference it using the tag: `SillyLittleTech/E2E@v1`
-
-### Version Tags
-
-- `v1` - Latest v1.x.x release (recommended)
-- `v1.0.0` - Specific version
-- `main` - Latest development version (not recommended for production)
-
 ## 📚 Additional Resources
 
 - [Playwright Documentation](https://playwright.dev)
 - [Axe Core Playwright Integration](https://github.com/dequelabs/axe-core-npm/tree/develop/packages/playwright)
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [GitHub Pages Documentation](https://docs.github.com/en/pages)
-- [Publishing GitHub Actions to Marketplace](https://docs.github.com/en/actions/creating-actions/publishing-actions-in-github-marketplace)
 
 ## 📄 License
 
