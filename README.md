@@ -1,6 +1,8 @@
 # E2E Testing Suite (Screenshots & Accessibility)
 
-A comprehensive GitHub Actions workflow that automatically captures screenshots of your website in multiple modes (web/mobile, light/dark) and performs accessibility testing using Playwright.
+A comprehensive GitHub Action that automatically captures screenshots of your website in multiple modes (web/mobile, light/dark) and performs accessibility testing using Playwright.
+
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-E2E%20Testing%20Suite-blue.svg?colorA=24292e&colorB=0366d6&style=flat&longCache=true&logo=github)](https://github.com/marketplace/actions/e2e-testing-suite)
 
 ## 🌟 Features
 
@@ -15,7 +17,39 @@ A comprehensive GitHub Actions workflow that automatically captures screenshots 
 
 ## 🚀 Usage
 
-### Quick Start
+### Option 1: Use as a GitHub Action (Recommended)
+
+Add this to your workflow file (`.github/workflows/e2e.yml`):
+
+```yaml
+name: E2E Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Run E2E Tests
+        uses: SillyLittleTech/E2E@v1
+        with:
+          port: '4173'
+          node-version: '20'
+          build-command: 'npm run build'
+          preview-command: 'npm run preview'
+```
+
+### Option 2: Copy the Complete Workflow
+
+### Option 2: Copy the Complete Workflow
+
+For more control and GitHub Pages integration, copy the full workflow file to your repository:
 
 1. **Copy the workflow file** to your repository:
    ```
@@ -45,7 +79,46 @@ A comprehensive GitHub Actions workflow that automatically captures screenshots 
    - Go to Settings > Pages
    - Source: GitHub Actions
 
-### Example Playwright Test Files
+### Prerequisites
+
+Before using this action, ensure your project has:
+
+- **Node.js project** with `package.json`
+- **Build script** defined (e.g., `npm run build`)
+- **Preview server script** defined (e.g., `npm run preview`)
+- **Playwright tests** in your repository
+
+Install required dependencies:
+```bash
+npm install --save-dev playwright @axe-core/playwright wait-on
+```
+
+## 📋 Action Inputs
+
+| Input | Description | Required | Default |
+|-------|-------------|----------|---------|
+| `port` | Port for the preview server and Playwright tests | No | `4173` |
+| `node-version` | Node.js version to use | No | `20` |
+| `build-command` | Command to build the site | No | `npm run build` |
+| `preview-command` | Command to start the preview server | No | `npm run preview` |
+| `test-files` | Playwright test files to run (space-separated) | No | `tests/e2e.spec.ts tests/a11y.spec.ts` |
+| `screenshot-prefix` | Prefix for screenshot filenames | No | `portfolio` |
+
+### Example with Custom Inputs
+
+```yaml
+- name: Run E2E Tests
+  uses: SillyLittleTech/E2E@v1
+  with:
+    port: '3000'
+    node-version: '18'
+    build-command: 'npm run build:prod'
+    preview-command: 'npm run serve'
+    test-files: 'tests/*.spec.ts'
+    screenshot-prefix: 'my-app'
+```
+
+## 📝 Example Playwright Test Files
 
 #### `tests/e2e.spec.ts` (Screenshot Capture)
 ```typescript
@@ -307,12 +380,27 @@ Update the commands to match your project:
 - Ensure workflow has required permissions (`pages: write`, `id-token: write`)
 - Check the Pages settings are set to "GitHub Actions" as source
 
+## 🎨 Marketplace
+
+This action is available on the GitHub Marketplace. To publish or update:
+
+1. Create a release with a semantic version tag (e.g., `v1.0.0`)
+2. The action will automatically appear in the GitHub Marketplace
+3. Users can reference it using the tag: `SillyLittleTech/E2E@v1`
+
+### Version Tags
+
+- `v1` - Latest v1.x.x release (recommended)
+- `v1.0.0` - Specific version
+- `main` - Latest development version (not recommended for production)
+
 ## 📚 Additional Resources
 
 - [Playwright Documentation](https://playwright.dev)
 - [Axe Core Playwright Integration](https://github.com/dequelabs/axe-core-npm/tree/develop/packages/playwright)
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [GitHub Pages Documentation](https://docs.github.com/en/pages)
+- [Publishing GitHub Actions to Marketplace](https://docs.github.com/en/actions/creating-actions/publishing-actions-in-github-marketplace)
 
 ## 📄 License
 
