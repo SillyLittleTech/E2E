@@ -1,5 +1,5 @@
 name: 'E2E Testing Suite'
-description: 'Automatically capture screenshots of your website in web/mobile and light/dark modes, plus accessibility testing with Playwright'
+description: 'Automatically capture screenshots of your website in web/mobile and light/dark modes, plus a11y tests with Playwright'
 author: 'SillyLittleTech'
 
 branding:
