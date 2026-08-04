@@ -1,0 +1,18 @@
+{
+  "pages": [
+    { "path": "/", "anchors": [] }
+  ],
+  "viewports": {
+    "web": { "width": 1280, "height": 720 },
+    "mobile": { "width": 375, "height": 667 }
+  },
+  "unitTests": {
+    "run": false,
+    "command": "npm test"
+  },
+  "formatting": {
+    "customCommentText": "",
+    "useDetailsBlocks": true
+  },
+  "themeToggleSelectors": [".theme-toggle", "[aria-label='Toggle dark mode']"]
+}
