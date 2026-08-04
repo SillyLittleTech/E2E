@@ -1,5 +1,5 @@
 name: 'E2E Testing Suite'
-description: 'Automatically capture screenshots of your website in multiple viewports and light/dark modes, with anchors and a11y tests via Playwright'
+description: 'Capture multi-viewport screenshots, test light/dark modes, run unit tests, and check a11y with Playwright dynamically.'
 author: 'SillyLittleTech'
 
 branding:
